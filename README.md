@@ -1,13 +1,9 @@
 # Ex.No:6 Implement an application that uses Explicit Intent using Android
 
-
 ## AIM:
-
 To create a two screens , first screen will take one number input from user. After click on Factorial button, second screen will open and it should display factorial of the same number using Explicit Intents.
 
-
 ## EQUIPMENTS REQUIRED:
-
 Latest Version Android Studio
 
 ## ALGORITHM:
@@ -22,14 +18,12 @@ Developed by:Varsha S
 Registeration Number : 212222220055
 */
 ```
-```
+
 ## Main activity.java:
-
+```
 package com.example.ex_6final;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -41,7 +35,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 public class MainActivity extends AppCompatActivity {
     EditText e1;
     Button res;
@@ -58,29 +51,22 @@ public class MainActivity extends AppCompatActivity {
                 int n1=Integer.parseInt(e1.getText().toString());
                 int sum =1;
                 while(n1!=0)
-                {
-                    sum = sum * n1;
-                    n1--;
-                }
+                {sum = sum * n1;
+                    n1--; }
                 Intent intent=new Intent(getApplicationContext(),SecondActivity.class);
                 intent.putExtra("key",sum);
                 startActivity(intent);
-            }
-        });
-    }
-}
-
+            }});}}
+```
 ## second activity.java
-
+```
 package com.example.ex_6final;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 public class SecondActivity extends AppCompatActivity {
     TextView t1;
     @Override
@@ -93,9 +79,9 @@ public class SecondActivity extends AppCompatActivity {
         t1.setText(Integer.toString(result));
     }
 }
-
+```
 ## acticity main.xml
-
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -148,9 +134,9 @@ public class SecondActivity extends AppCompatActivity {
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.622" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
+```
 ## second activity.xml
-
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -192,14 +178,13 @@ public class SecondActivity extends AppCompatActivity {
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.45" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
+```
 ## Android  manifest:
-
+```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.ex_6final">
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -213,24 +198,15 @@ public class SecondActivity extends AppCompatActivity {
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
     </application>
-
 </manifest>
-
-
 ```
-
 ## OUTPUT
 ![Screenshot 2024-09-28 112112](https://github.com/user-attachments/assets/e6fffa73-8dc7-45e9-8d9f-095022af8097)
-
 ![Screenshot 2024-09-28 112131](https://github.com/user-attachments/assets/80484671-d1b8-479c-93b2-24e7a3371fba)
-
-
-
 ## RESULT
 Thus a Simple Android Application create a Explicit Intents using Android Studio is developed and executed successfully.
